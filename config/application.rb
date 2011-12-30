@@ -1,6 +1,10 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'rails/all'
+#require 'rails/all'
+require "action_controller/railtie"
+require "action_mailer/railtie"
+require "active_resource/railtie"
+require "rails/test_unit/railtie"
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -44,5 +48,14 @@ module LiveAboveTheLineWithMe
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+  config.generators do |g|
+    #g.test_framework :rspec, :views => false, :fixture => true
+    #g.fixture_replacement :factory_girl, :dir => 'spec/factories'
+    #g.form_builder :simple_form
+    g.orm :mongo_mapper
+    g.template_engine :haml
+  end
+    
   end
 end

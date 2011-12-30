@@ -2,10 +2,22 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
 
+gem 'formtastic'
+gem 'mongo_mapper'
+gem 'bson_ext'
+gem 'haml'
+gem 'haml-rails', :group => :development
+gem 'mongo_mapper'
+gem 'rails3-generators'
+gem 'omniauth-twitter'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
+group :development, :test do
+  gem 'mongrel', '>= 1.2.0.pre2'
+  gem "nifty-generators"
+end
 
-gem 'sqlite3'
+#gem 'sqlite3'
 
 gem 'json'
 
@@ -31,3 +43,4 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug'
 
+gem "mocha", :group => :test
