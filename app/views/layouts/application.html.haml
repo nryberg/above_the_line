@@ -2,15 +2,21 @@
 %html
 %head
   %title Live Above the Line withe Me
-  = stylesheet_link_tag    "application"
+  = stylesheet_link_tag    "blueprint/screen"
   = javascript_include_tag "application"
   = csrf_meta_tags 
 %body
-<% if current_user %>
-  Welcome <%= current_user.name %>!
-  <%= link_to "Sign Out", signout_path %>
-<% else %>
-  <%= link_to "Sign in with Twitter", "/auth/twitter" %>
-<% end %>
-  = yield 
+  .container
+    .span-24
+      - if current_user
+        Welcome 
+        = current_user.name
+        = link_to "Sign Out", signout_path
+      - else
+        = link_to "Sign in with Twitter", "/auth/twitter"
+    .span-24
+      %p#notice flas
+      - render :partial => "layouts/notice_div"
+    .span-24
+      = yield 
 

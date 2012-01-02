@@ -1,7 +1,16 @@
 LiveAboveTheLineWithMe::Application.routes.draw do
 
+  resources :budgets
+
+  resources :items
+
+  resources :authentications
+
   match "/auth/:provider/callback" => "sessions#create"
+  match "/auth/failure" => "sessions#failure"
   match "/signout" => "sessions#destroy", :as => :signout
+  root :to => 'welcome#index'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -51,7 +60,6 @@ LiveAboveTheLineWithMe::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 
