@@ -2,12 +2,21 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
 
+gem 'formtastic'
+gem 'mongo_mapper'
+gem 'bson_ext'
+gem 'haml'
+gem 'haml-rails', :group => :development
+gem 'mongo_mapper'
+gem 'rails3-generators'
+gem 'omniauth-twitter'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
+group :development, :test do
+  gem 'mongrel', '>= 1.2.0.pre2'
+  gem "nifty-generators"
+end
 
-gem 'sqlite3'
-gem 'execjs'
-gem 'therubyracer'
 gem 'json'
 
 # Gems used only for assets and not required
@@ -17,7 +26,6 @@ group :assets do
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
 end
-
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
@@ -32,3 +40,4 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug'
 
+gem "mocha", :group => :test

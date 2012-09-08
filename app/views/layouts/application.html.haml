@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+%html
+%head
+  %title Live Above the Line withe Me
+  = stylesheet_link_tag    "blueprint/screen"
+  = stylesheet_link_tag("formtastic_changes")
+  = stylesheet_link_tag("formtastic")
+  = javascript_include_tag "application"
+  = csrf_meta_tags 
+%body
+  .container
+    .span-24
+      - if current_user
+        Welcome 
+        = current_user.name
+        = link_to "Sign Out", signout_path
+      - else
+        = link_to "Sign in with Twitter", "/auth/twitter"
+    .span-24
+      %p#notice [flash when it's done]
+      - render :partial => "layouts/notice_div"
+    .span-2
+      %p
+        %a= link_to "Items", items_path
+      %p
+        %a= link_to "Budgets", budgets_path 
+    .span-22.last
+      = yield 
+
