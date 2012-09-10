@@ -10,11 +10,13 @@ gem 'haml-rails', :group => :development
 gem 'mongo_mapper'
 gem 'rails3-generators'
 gem 'omniauth-twitter'
+gem 'omniauth-identity'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 group :development, :test do
   gem 'mongrel', '>= 1.2.0.pre2'
   gem "nifty-generators"
+  gem 'guard-livereload'
 end
 
 gem 'formtastic'
@@ -32,7 +34,7 @@ end
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the web server
 # gem 'unicorn'

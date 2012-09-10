@@ -1,6 +1,29 @@
-%p#notice= notice
-
-
-= link_to 'Edit', edit_item_path(@item)
-\|
-= link_to 'Back', items_path
+%h1 Item
+.span-20.prepend-1
+  .span-5
+    %h3= @item.name
+  .span-5.dollar-value
+    %h3
+      = @item.value 
+      = tag_value(@item.item_type) 
+  %p - 
+  .span-20
+    %strong.span-4 Period Type
+    .span-8= @item.period_type
+  - if @item.period_type == "Day"
+    .span-20
+      %strong.span-4 Day of Month 
+      .span-8= @item.day
+  - else
+    .span-20
+      %strong.span-4 Period
+      .span-8= @item.period
+    .span-20
+      %strong.span-4 Period Start
+      .span-8= @item.period_start
+.span-4.last
+.span-20.last
+  
+  = link_to 'Edit', edit_item_path(@item)
+  \|
+  = link_to 'List', items_path
