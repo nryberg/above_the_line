@@ -11,6 +11,9 @@ gem 'mongo_mapper'
 gem 'rails3-generators'
 gem 'omniauth-twitter'
 gem 'omniauth-identity'
+gem 'execjs'
+gem 'therubyracer'
+
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 group :development, :test do
@@ -18,9 +21,6 @@ group :development, :test do
   gem "nifty-generators"
   gem 'guard-livereload'
 end
-
-gem 'formtastic'
-#gem 'sqlite3'
 
 gem 'json'
 
