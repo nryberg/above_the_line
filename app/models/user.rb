@@ -1,19 +1,10 @@
 class User
   include MongoMapper::Document
+  has_secure_password
   attr_accessible :email, :password, :password_confirmation
-  key :provider, String
-  key :uid, String
-  key :name, String
-  
-  def self.create_with_omniauth(auth)
-    ap auth
-    create! do |user|
-      user.provider = auth["provider"]
-      user.uid = auth["uid"]
-      user.name = auth["info"]["name"]
-      #user.email = auth[
-    end
-  end
+  validates_presence_of :password, :on => :create 
+  key :password_digest, String
+  key :email, String  
 
   many :items
   many :budgets

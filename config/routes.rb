@@ -3,12 +3,8 @@ LiveAboveTheLineWithMe::Application.routes.draw do
   resources :budgets
 
   resources :items
+  resources :users
 
-  resources :authentications
-  resources :identities
-  match "/auth/:provider/callback" => "sessions#create"
-  match "/auth/failure" => "sessions#failure"
-  match "/signout" => "sessions#destroy", :as => :signout
   root :to => 'welcome#index'
   
   # The priority is based upon order of creation:
