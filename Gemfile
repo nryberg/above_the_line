@@ -46,3 +46,4 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # gem 'ruby-debug'
 
 gem "mocha", :group => :test
+gem 'rb-inotify', '~> 0.8.8'
