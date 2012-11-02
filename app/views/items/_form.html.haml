@@ -1,5 +1,5 @@
 = semantic_form_for @item do |f|
-  - f.inputs do
+  = f.inputs do
     = f.input :name, :as => :string
     = f.input :value
     = f.input :item_type, :as => :radio, :collection => ["Income", "Expense"]
@@ -8,4 +8,4 @@
     = f.input :period_start, :as => String
     = f.input :day
     = f.input :unique_date
-    .actions= f.buttons :commit
+  = f.actions 
