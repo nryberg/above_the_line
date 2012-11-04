@@ -6,7 +6,7 @@ class User
   key :name, String
   
   def self.create_with_omniauth(auth)
-    ap auth
+    #ap auth
     create! do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
