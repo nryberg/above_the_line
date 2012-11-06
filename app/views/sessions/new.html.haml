@@ -1,10 +1,10 @@
-%h1 Log In
-= form_tag sessions_path do
-  .field
-    = label_tag :email
-    = text_field_tag :email, params[:email]
-  .field
-    = label_tag :password
-    = password_field_tag :password
-  .actions
-    = submit_tag "Log In"
+.span-20.prepend-2
+  %h2 Log In
+  .span-20.last
+    .span-16.prepend-1.last
+      = semantic_form_for sessions_path do |f|
+        = f.inputs do
+          = f.input :email
+          = f.input :password
+        = f.actions do
+          = f.submit

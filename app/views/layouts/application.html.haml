@@ -10,23 +10,30 @@
   = csrf_meta_tags 
 %body
   .container
-    .span-24
-      - if current_user
-        Welcome 
-        = current_user.email
-        = link_to "Log Out", log_out_path
-      - else
-        = link_to "Sign Up ", "/users/new"
-        = link_to "Log In ", log_in_path
+    .span-24#header
+      .span-16.prepend-2
+        %h2 Above the line
+      .span-6.last#login
+        - if current_user
+          .span-6.last
+            Welcome 
+            = current_user.email
+          .span-6.last
+            = link_to "Log Out", log_out_path
+        - else
+          .span-6.last
+            = link_to "Sign Up ", "/users/new"
+          .span-6.last
+            = link_to "Log In  ", log_in_path
     //.span-24
     //  %p#notice [flash when it's done]
-    //  - render :partial => "layouts/notice_div"
-    .span-24.pad-2
-    .span-2
-      %p
-        %a= link_to "Items", items_path
-      %p
-        %a= link_to "Budgets", budgets_path 
+    //  - render :partial => "layouts/notice_div"    
+    - if current_user
+      .span-2
+        %p
+          %a= link_to "Items", items_path
+        %p
+          %a= link_to "Budgets", budgets_path 
     .span-22.last
       = yield 
 

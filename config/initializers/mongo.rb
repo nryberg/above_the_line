@@ -1,6 +1,6 @@
 # Local ###
 if ENV['RAILS_ENV'] == "development" 
-  MongoMapper.connection = Mongo::Connection.new('192.168.0.100', 27017)
+  MongoMapper.connection = Mongo::Connection.new('127.0.0.1', 27017)
   MongoMapper.database = 'above_the_line'
 elsif ENV['RAILS_ENV'] == "production" 
   MongoMapper.connection = Mongo::Connection.new('flame.mongohq.com', 27038)
