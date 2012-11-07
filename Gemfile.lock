@@ -123,6 +123,8 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.3.1)
+    pry-rails (0.1.6)
+      pry
     quiet_assets (1.0.1)
       railties (~> 3.1)
     rack (1.3.6)
@@ -200,6 +202,7 @@ DEPENDENCIES
   nifty-generators
   omniauth-identity
   omniauth-twitter
+  pry-rails
   quiet_assets
   rails (= 3.1.1)
   rails3-generators

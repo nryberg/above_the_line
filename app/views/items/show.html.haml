@@ -8,19 +8,8 @@
       = tag_value(@item.item_type) 
   %p - 
   .span-20
-    %strong.span-4 Period Type
-    .span-8= @item.period_type
-  - if @item.period_type == "Day"
-    .span-20
-      %strong.span-4 Day of Month 
-      .span-8= @item.day
-  - else
-    .span-20
-      %strong.span-4 Period
-      .span-8= @item.period
-    .span-20
-      %strong.span-4 Period Start
-      .span-8= @item.period_start
+    %strong.span-4 Next date
+    .span-8= @item.next_date
 .span-4.last
 .span-20.last
   
