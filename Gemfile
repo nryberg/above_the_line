@@ -50,3 +50,4 @@ gem "mocha", :group => :test
 gem 'rb-fsevent', '~> 0.9.1'
 gem 'quiet_assets', :group => :development
 gem 'awesome_print'
+gem 'bootstrap-datepicker-rails'

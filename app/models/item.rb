@@ -4,12 +4,6 @@ class Item
   key :name, String
   key :value, Float
   key :period_type, String # day or interval
-  key :period, Integer
-  key :period_start, Date
-  key :day, Integer
-  key :unique_date, Date
-  key :item_type, String # income or expense
-
-  belongs_to :user
-
+  key :item_type, String # in or out
+  key :next_date, Date #next day this can be paid
 end
