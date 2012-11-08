@@ -14,7 +14,10 @@ class ItemsController < ApplicationController
   # GET /items/1.json
   def show
     @item = Item.find(params[:id])
-
+    ap params
+    if params[:destroy]
+      render 'confirm_delete' and return
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @item }
@@ -59,6 +62,7 @@ class ItemsController < ApplicationController
   # PUT /items/1.json
   def update
     @item = Item.find(params[:id])
+    ap params
 
     respond_to do |format|
       if @item.update_attributes(params[:item])

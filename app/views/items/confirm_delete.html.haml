@@ -1,0 +1,7 @@
+= form_for :model, :url => item_path(@path), :html => { :method => :delete } do |f|
+
+  %h2 
+    Are you sure you want to destroy this item?
+    = submit_tag "Destroy"
+    or 
+    = link_to "cancel", items_path
