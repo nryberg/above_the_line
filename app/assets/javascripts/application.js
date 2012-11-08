@@ -6,9 +6,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require_tree .
-//= require bootstrap-datepicker
-$(document).on("focus", "#dp1", function(e){
-    $(this).datepicker({"format": "yyyy-mm-dd", "weekStart": 1, "autoclose": true});
-});
+//= require_self
 

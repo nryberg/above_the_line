@@ -1,8 +1,12 @@
-= semantic_form_for @item do |f|
-  = f.inputs do
-    = f.input :name, :as => :string
-    = f.input :value
-    = f.input :item_type, :as => :radio, :collection => ["In", "Out"]
-    #dp1
-      = f.input :next_date, :as => :string
-  = f.actions 
+= form_for(@item) do |f|
+  .span-22
+    .span-3= f.label :name
+    .span-3= f.text_field :name
+  .span-22
+    .span-3= f.label :value
+    .span-3= f.number_field :value
+  .span.22
+    .span-3= f.label :next_date
+    .span-3= f.datepicker :next_date
+  .span-22
+    = f.submit
