@@ -5,6 +5,10 @@
   .span-22
     .span-3= f.label :value
     .span-3= f.number_field :value
+  .span-22
+    .span-3= f.label "Direction"
+    .span-3= f.radio_button :direction, :out
+    .span-3= f.radio_button :direction, :in
   .span.22
     .span-3= f.label :next_date
     .span-3= f.datepicker :next_date
