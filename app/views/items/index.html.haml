@@ -9,8 +9,8 @@
   - @items.each do |item|
     %tr
       %td= link_to item.name, item
-      %td= "Next Appearance"
-      %td.span-3.dollar-value= number_to_currency(item.value) + tag_value(item.item_type)
+      %td= item.next_date
+      %td.span-3.dollar-value= number_to_currency(item.value)
 				
 
 

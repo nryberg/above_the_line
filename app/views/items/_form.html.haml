@@ -1,16 +1,11 @@
-= form_for(@item) do |f|
-  .span-22
-    .span-3= f.label :name
-    .span-3= f.text_field :name
-  .span-22
-    .span-3= f.label :value
-    .span-3= f.number_field :value
-  .span-22
-    .span-3= f.label "Direction"
-    .span-3= f.radio_button :direction, :out
-    .span-3= f.radio_button :direction, :in
-  .span.22
-    .span-3= f.label :next_date
-    .span-3= f.datepicker :next_date
-  .span-22
-    = f.submit
+.span-12.last
+  = semantic_form_for(@item) do |f|
+    = f.inputs do 
+      = f.input :name
+      = f.input :value, :as => :number
+      = f.input :direction, :as => :radio, :collection => ["In", "Out"]
+      = f.input :next_date, :as => :string, :input_html => {:class => "datepicker"}
+      = f.input :period, :as => :radio, :collection => @periods
+    .span-22.last
+      = f.submit
+.span-12= link_to 'Remove this item', item_path(@item, :destroy => true), :confirm => 'Are you sure?', :method => :delete

@@ -37,6 +37,7 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
+    @periods = ["Only Once", "Day of Month", "Weekly", "Biweekly", "Monthly"]
     @item = Item.find(params[:id])
   end
 
